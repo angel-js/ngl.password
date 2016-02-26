@@ -6,16 +6,22 @@ Angular 1.x directive for preventing the "remember password" dialog
 Usage
 -----
 
+Its a replacement for the `type="password"` attribute
+
 ```html
 <form ng-submit="login(user)">
   <input type="text" ng-model="user.name" />
   <input ngl-password ng-model="user.password" />
-</div>
+</form>
 ```
 
 `<ngl-password>` changes the type of the input to password on the next tick
-after DOM is ready, so the browser cannot detect it as password. Its a
-replacement to `type="password"` attribute
+after DOM is ready, so the browser cannot detect it as a password field.
+This prevents the browser to show the "remember password" dialog which
+could lead to security issues in some scenarios.
+
+More information in this stackoverflow threat:
+<http://stackoverflow.com/questions/32369/disable-browser-save-password-functionality>
 
 Install
 -------
@@ -47,17 +53,3 @@ How to reproduce "remember password" dialog
 
  1. Fill the fields and click on the "login" button
  2. Refresh the page
-
-Events causing form submission
-------------------------------
-
-  * Pressing enter in a text field
-  * Pressing space or enter in an input or button with `type=submit`
-  * Clicking a button or input with `type=submit`
-
-References
-----------
-
-  * <http://stackoverflow.com/questions/32369/disable-browser-save-password-functionality>
-  * <https://github.com/angular/angular.js/issues/2513#issuecomment-29454622>
-  * <https://github.com/mcpDESIGNS/ngForm-handle-Enter-Keypress/blob/master/ngFormFixes.directive.js>
