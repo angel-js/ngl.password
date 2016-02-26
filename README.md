@@ -17,7 +17,7 @@ Its a replacement for the `type="password"` attribute
 
 `<ngl-password>` changes the type of the input to password on the next tick
 after DOM is ready, so the browser cannot detect it as a password field.
-This prevents the browser to show the "remember password" dialog which
+This prevents the browser from showing the "remember password" dialog which
 could lead to security issues in some scenarios.
 
 More information in this stackoverflow threat:
@@ -41,15 +41,3 @@ angular.module('app', [
   'ngl.password'
 ]);
 ```
-
-How to reproduce "remember password" dialog
--------------------------------------------
-
-### Firefox
-
- 1. Fill the fields and click on the "login" button
-
-### Chrome
-
- 1. Fill the fields and click on the "login" button
- 2. Refresh the page
