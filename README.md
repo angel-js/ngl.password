@@ -3,6 +3,11 @@ ngl.password
 
 Angular 1.x directive for preventing the "remember password" dialog
 
+DEPRECATED
+----------
+
+This method do not work in firefox 43. Use <https://github.com/angel-js/ngl.form> instead
+
 Usage
 -----
 
